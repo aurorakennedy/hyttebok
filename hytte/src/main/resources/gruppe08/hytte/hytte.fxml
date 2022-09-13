@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="204.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HYTTEBOKA" wrappingWidth="227.3115234375">
+         <font>
+            <Font name="American Typewriter" size="30.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="datePicker" layoutX="286.0" layoutY="75.0" />
+      <TextField fx:id="visitors" layoutX="286.0" layoutY="113.0" prefHeight="26.0" prefWidth="185.0" />
+      <Text layoutX="220.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dokumenter gode minner." wrappingWidth="159.1171875">
+         <font>
+            <Font name="American Typewriter" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="167.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Når var besøket?" wrappingWidth="106.4521484375" />
+      <Text layoutX="151.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hvem var på besøk?" wrappingWidth="121.4521484375" />
+      <Text layoutX="200.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hvordan har du hatt det på hytta?" wrappingWidth="232.6672349252168">
+         <font>
+            <Font name="American Typewriter" size="13.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="experience" layoutX="137.0" layoutY="177.0" prefHeight="150.0" prefWidth="344.0" />
+      <Text layoutX="238.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Takk for besøket!" wrappingWidth="159.1171875">
+         <font>
+            <Font name="American Typewriter" size="15.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>
