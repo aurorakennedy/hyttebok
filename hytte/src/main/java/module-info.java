@@ -1,7 +1,7 @@
 module gruppe08.hytte {
 
     requires javafx.controls;
-    requires javafx.fmxl;
+    requires javafx.fxml;
 
     opens gruppe08.hytte to javafx.graphics, javafx.fxml;
 }
