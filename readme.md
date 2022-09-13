@@ -1,7 +1,39 @@
 # Group gr2208 repository
+## Hyttebok Prosjekt 
 
-Welcome to IT1901 Fall 2022 course
+### Beskrivelse av prosjektet 
+Prosjektet vårt går ut på at vi skal lage en hyttebok hvor man kan loggføre besøk på hytta. Loggen skal være tilknyttet både en person og ett tidspunkt, slik at vi kan hente ut tidligere loggføriringer knyttet til tid eller person. 
 
-Good luck!
+### Prosjektstruktur 
 
-her er de nye endringene på test-branchen. Dette skal merges med master-branch etterpå.
+På rotnivået har vi mappen, _docs_, _hytte_ og en _readme_
+ fil. 
+ 
+Inne i *docs*  mappen har vi ny mappe struktur hvor vi vil få en ny mappe per innlevering. Til nå ligger det en mappe der som heter *release1*, hvor det ligger en dokumentasjon på hva vi har gjort til første innlevering. 
+
+I mappen *hytte* har vi fire strukturen som er byggd opp slik: 
+
+
+#### 1. *hytte* --> *pom.xml* 
+Gjør slik at  javafx run og maven test fungerer. 
+
+#### 2.  *hytte* --> *scr* --> *main* --> *java* --> *gruppe08* --> *hytte*
+
+I hytte mappen er det til nå tre klasser. 
+- *post.java* her skal vi implementere logikken til en loggføring i boka. 
+- *hytteApp.java* får appen til å kjøre. 
+- *hytteController.java* kobler sammen fxml'en og java koden. 
+
+
+#### 3. *hytte* --> *scr* --> *main* --> *resources* --> *gruppe08* --> *hytte*
+
+Her har vi en fil.
+- *hytte.fxml* lager vi i scenebilder, er frontend delen av prosjektet. 
+
+#### 4. *hytte* --> *scr* --> *test* --> *java* --> *gruppe08* --> *hytte*
+
+Test mappen inneholder per nå kun en klasse som vi skal teste. 
+
+- *postTest.java* skal teste post klassen. 
+
+ 
