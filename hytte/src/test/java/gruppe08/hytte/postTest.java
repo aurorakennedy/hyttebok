@@ -1,5 +1,5 @@
 package gruppe08.hytte;
 
-public class ExampleTest {
+public class postTest {
     
 }
