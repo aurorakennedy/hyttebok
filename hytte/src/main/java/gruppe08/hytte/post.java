@@ -57,12 +57,4 @@ public class Post {
         }
         return true;
     }
-
-    
-    public static void main(String[] args) {
-        LocalDate date = LocalDate.now();
-        Post post1 = new Post("aaHH JJl DdFIEFØ", "Her er innmaten", date);
-        //Post post2 = new Post("asdf1132", "Her er innmaten igjen 123", date);
-        System.out.println(post1.getDate());
-    }
 }
