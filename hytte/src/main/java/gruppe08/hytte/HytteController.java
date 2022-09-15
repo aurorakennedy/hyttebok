@@ -8,6 +8,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.Alert.AlertType;
 
 public class HytteController {
@@ -16,7 +17,10 @@ public class HytteController {
     
 
     @FXML
-    private TextField visitors, experience; //importerer FXML-TextField-feltene
+    private TextField visitors; //importerer FXML-TextField-feltene
+
+    @FXML
+    private TextArea experience;
 
     @FXML
     private Button saveButton, previousPostsButton; //importerer FXML-button-feltene

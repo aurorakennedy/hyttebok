@@ -45,7 +45,7 @@ public class Post {
 
 
     private Boolean validName(String s){
-        if (s == null){
+        if (s == null || s == ""){
             return false;
         }
 
