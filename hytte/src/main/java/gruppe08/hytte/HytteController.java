@@ -1,5 +1,5 @@
 package gruppe08.hytte;
 
-public class hytteController {
+public class HytteController {
     
 }
