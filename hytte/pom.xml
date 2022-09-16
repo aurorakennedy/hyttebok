@@ -65,6 +65,14 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- JSON -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20220320</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -85,6 +93,13 @@
                     <argLine>
                     --add-opens gruppe08.hytte/gruppe08.hytte=ALL-UNNAMED --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED
                     </argLine>
+                    <source>11</source>
+                    <target>11</target>
+                    <compilerArgs>
+                        <arg>-Xlint:unchecked</arg>
+                        <arg>--add-modules</arg>
+                        <arg>org.json</arg>
+                </compilerArgs>
                 </configuration>
 	        </plugin>
 
