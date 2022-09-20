@@ -4,3 +4,4 @@ Prosjektet vårt går ut på at vi skal lage en digital hyttebok. I hytteboka sk
 
 Vi har lagd to brukercaser som tar for seg hvorfor man kunne tenke seg å ha en digital hyttebok i stede for en fysisk.
 
+![Usercases](../resources/gruppe08/hytte/userCases.jpg)
