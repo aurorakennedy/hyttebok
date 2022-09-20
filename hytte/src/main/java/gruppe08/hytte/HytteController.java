@@ -1,13 +1,9 @@
 package gruppe08.hytte;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
-
-import org.json.JSONObject;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -53,20 +49,9 @@ public class HytteController {
         try {
             Post post = new Post(visitors.getText(), experience.getText(), datePicker.getValue());
             postList.addPost(post);
-            //Save info in JSON file
-            JSONObject obj = new JSONObject();
-            obj.put("name", visitors.getText());
-            obj.put("experience", experience.getText());
-            obj.put("date", datePicker.getValue());
-
-            String filePath = ("hyttebok.json");
-
-            try (FileWriter writer = new FileWriter(filePath, true)) {
-                BufferedWriter buffed = new BufferedWriter(writer);
-                buffed.write(obj.toString());
-                buffed.newLine();
-                buffed.close();
-            }
+            
+            HytteSave save = new HytteSave(visitors.getText(), experience.getText(), datePicker.getValue());
+            save.commitSave();
 
             visitors.clear();
             datePicker.setValue(LocalDate.now());
