@@ -12,7 +12,7 @@ public class postTest {
 
     @BeforeEach
     // Lager en post, slik at vi kan teste at post fungerer som den skal 
-    private void creatPost(){
+    public void creatPost(){
         post = new Post("Knut", "Hei, dette er en test. Håper den funker.", LocalDate.of(2000, 11, 4)); 
     }
     
