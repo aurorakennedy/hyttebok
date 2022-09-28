@@ -1,4 +1,4 @@
-package gruppe08.hytte;
+package hytte.ui;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
