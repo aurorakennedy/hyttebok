@@ -76,6 +76,12 @@
 
     </dependencies>
 
+    
+    <modules>
+        <module>core</module>
+        <module>fxui</module>
+    </modules>
+
     <build>
         <pluginManagement>
             <plugins>
@@ -120,13 +126,19 @@
                         </execution>
                     </executions>
                 </plugin>
+                <plugin>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>javafx-maven-plugin</artifactId>
+                    <version>0.0.6</version>
+                    <!-- Default configuration for running -->
+                    <!-- Usage: mvn javafx:run -->
+                    <configuration>
+                        <mainClass>gruppe08.hytte.hytteApp</mainClass> <!-- den funker bare med gruppe08.hytte, selv om disse ikke fins mer... -->
+                    </configuration>
+            </plugin>
 
             </plugins>
         </pluginManagement> 
     </build>
-    <modules>
-        <module>core</module>
-        <module>fxui</module>
-    </modules>
 </project>
 

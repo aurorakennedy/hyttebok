@@ -6,5 +6,7 @@ module hytte.ui {
 
     requires hytte.core;
 
+    exports hytte.ui;
+
     opens hytte.ui to javafx.graphics, javafx.fxml;
 }
