@@ -98,9 +98,14 @@
             </plugin>
 
             <plugin>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.6</version>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>javafx-maven-plugin</artifactId>
+                    <version>0.0.6</version>
+                    <!-- Default configuration for running -->
+                    <!-- Usage: mvn javafx:run -->
+                    <configuration>
+                        <mainClass>hytte.ui/hytte.ui.hytteApp</mainClass>
+                    </configuration>
             </plugin>
         </plugins>
 
