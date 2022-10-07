@@ -104,10 +104,20 @@
                     <!-- Default configuration for running -->
                     <!-- Usage: mvn javafx:run -->
                     <configuration>
-                        <mainClass>hytte.ui/hytte.ui.hytteApp</mainClass>
+                        <mainClass>hytte.ui/hytte.ui.HytteApp</mainClass>
                     </configuration>
             </plugin>
-        </plugins>
+            <!-- Checkstyle -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+            </plugin>
+            <!-- Spotbugs -->
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+            </plugin>
 
+        </plugins>
     </build>
 </project>
