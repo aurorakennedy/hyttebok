@@ -1,4 +1,4 @@
-package gruppe08.hytte;
+package hytte.ui;
 import java.time.LocalDate;
 import org.json.JSONObject;
 import java.io.BufferedWriter;

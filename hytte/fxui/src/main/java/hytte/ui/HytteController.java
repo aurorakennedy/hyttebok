@@ -1,10 +1,12 @@
-package gruppe08.hytte;
+package hytte.ui;
 
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 
+import hytte.core.Post;
+import hytte.core.PostList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;

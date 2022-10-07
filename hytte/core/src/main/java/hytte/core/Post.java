@@ -1,4 +1,4 @@
-package gruppe08.hytte;
+package hytte.core;
 
 import java.time.LocalDate;
 
