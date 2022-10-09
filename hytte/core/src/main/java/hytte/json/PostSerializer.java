@@ -25,5 +25,6 @@ public class PostSerializer extends JsonSerializer<Post> {
       jGen.writeStringField("name", post.getName());
       jGen.writeStringField("postText", post.getContent());
       jGen.writeEndObject();
+      
     }
   }
