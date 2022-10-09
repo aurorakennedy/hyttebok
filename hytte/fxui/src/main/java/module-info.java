@@ -4,8 +4,7 @@ module hytte.ui {
     requires javafx.fxml;
     requires org.json;
 
-    requires hytte.core;
-
+    requires transitive hytte.core;
     exports hytte.ui;
 
     opens hytte.ui to javafx.graphics, javafx.fxml;

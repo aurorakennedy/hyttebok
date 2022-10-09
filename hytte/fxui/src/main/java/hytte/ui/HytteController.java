@@ -52,7 +52,7 @@ public class HytteController {
             Post post = new Post(visitors.getText(), experience.getText(), datePicker.getValue());
             postList.addPost(post);
             
-            HytteSave save = new HytteSave(visitors.getText(), experience.getText(), datePicker.getValue());
+            HytteSave save = new HytteSave(postList);
             save.commitSave();
 
             visitors.clear();

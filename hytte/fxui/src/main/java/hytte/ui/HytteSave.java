@@ -1,40 +1,39 @@
 package hytte.ui;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.json.JSONObject;
+
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import hytte.core.Post;
+import hytte.core.PostList;
+import hytte.json.PostModule;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class HytteSave {
 
-    private String visitors;
-    private String experience;
-    private LocalDate datePicker;
+    private PostList list;
 
-    public HytteSave (String visitors, String experience, LocalDate datePicker) {
-        this.visitors = visitors;
-        this.experience = experience;
-        this.datePicker = datePicker;
+    public HytteSave (PostList list) {
+        this.list = list;
     }
 
     public void commitSave () throws IOException {
-        
-        //Save info in JSON file
-        JSONObject obj = new JSONObject();
-        obj.put("name", visitors);
-        obj.put("experience", experience);
-        obj.put("date", datePicker);
 
         String filePath = ("hyttebok.json");
 
-        try (FileWriter writer = new FileWriter(filePath, true)) {
-            BufferedWriter buffed = new BufferedWriter(writer);
-
-            buffed.newLine();
-            buffed.write(obj.toString());
-            buffed.close();
-        }
-
+        /*Release 2 forsøk på fillagring*/
+        
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new PostModule());
+        mapper.writeValue(new File("hyttebok.json"), list);
+        
     }
 
 }
