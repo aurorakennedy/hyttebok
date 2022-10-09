@@ -26,14 +26,12 @@ public class HytteSave {
 
     public void commitSave () throws IOException {
 
-        String filePath = ("hyttebok.json");
-
         /*Release 2 forsøk på fillagring*/
         
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new PostModule());
         mapper.writeValue(new File("hyttebok.json"), list);
-        
+
     }
 
 }

@@ -21,7 +21,8 @@ public class PostSerializer extends JsonSerializer<Post> {
     @Override
     public void serialize(Post post, JsonGenerator jGen, SerializerProvider serializerProvider) throws IOException {
       jGen.writeStartObject();
-      /*jGen.writeDateField("date", post.getDate());*/
+      /*String dateString = new SimpleDateFormat("dd--MM-yyyy").format(post.getDate());
+      jGen.writeStringField("date", dateString);*/
       jGen.writeStringField("name", post.getName());
       jGen.writeStringField("postText", post.getContent());
       jGen.writeEndObject();

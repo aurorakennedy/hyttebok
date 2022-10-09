@@ -45,7 +45,7 @@ public class Post {
 
 
     private Boolean validName(String s){
-        if (s == null || s == ""){
+        /*if (s == null || s == ""){
             return false;
         }
 
@@ -54,7 +54,7 @@ public class Post {
             if (!Character.isLetter(c) && !Character.isWhitespace(c)){
                 return false;
             }
-        }
+        }*/
         return true;
     }
 }
