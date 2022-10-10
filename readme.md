@@ -18,7 +18,7 @@ På rotnivået har vi mappene _docs_, _hytte_ og en _readme_
  
 Inne i *docs*  mappen har vi ny mappe struktur hvor vi vil få en ny mappe per innlevering. Til nå ligger det to mapper der, *realease1* og *release2*, der dokumentasjonen på første og andre innlevering ligger.
 
-I mappen *hytte* har vi fire strukturen som er byggd opp slik: 
+I mappen *hytte* har vi fem strukturen som er byggd opp slik: 
 
 
 #### 1. *hytte* --> *pom.xml* 
@@ -37,4 +37,9 @@ Dette er mappen for fxui-modulen til prosjektet. Den inneholder brukergrensesnit
 Mappen inneholder konfigurasjonsfiler for maven-pluginsene Checkstyle og Spotbugs. 
 De brukes for å endre hva som testes ved bruk av kommandoen `mvn verify`
 
- 
+#### 5. *hytte* --> *readme.md*
+Beskriver hva appen handler om og hva den er ment å gjøre når den er ferdig.
+
+#### 6. *hytte* --> *doc_resources*
+Inneholder ressurser til *readme.md* filen. Ekempelbilder og brukerhistorier.
+
