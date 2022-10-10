@@ -1,12 +1,14 @@
 package hytte.core;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 
 public class Post {
     
     private String name;
     private String content;
-    private LocalDate date;
+    private String date;
 
     public Post(String name, String content, LocalDate date){
         setName(name);
@@ -22,7 +24,7 @@ public class Post {
         return this.content;
     }
 
-    public LocalDate getDate(){
+    public String getDate(){
         return this.date;
     }
 
@@ -40,12 +42,15 @@ public class Post {
     }
 
     public void setDate(LocalDate date){
-        this.date = date;
+        String formattedDate = date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM));
+        this.date = formattedDate;
     }
 
+    public void setDateRead (String d) {
+        this.date = d;
+    }
 
     private Boolean validName(String s){
-        System.out.println(s);
         if (s == null || s == ""){
             return false;
         }
@@ -58,4 +63,5 @@ public class Post {
         }
         return true;
     }
+
 }

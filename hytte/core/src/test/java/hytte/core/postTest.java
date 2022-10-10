@@ -18,7 +18,7 @@ public class postTest {
     
     @Test
     public void testConstructer(){
-        /* 
+        /*
         // Sjekker om verdiene er det vi forventer 
         Assertions.assertEquals("Knut", post.getName());
         Assertions.assertEquals("Hei, dette er en test. Håper den funker.", post.getContent());
@@ -33,7 +33,7 @@ public class postTest {
         //Sjekker at navn ikke kan inneholde special characters 
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
 			new Post("Trym/Aksel", "Tigergutt", LocalDate.of(2000, 11, 4)); 
-		});*/
-
+		});
+        */
     }
 }

@@ -18,7 +18,7 @@ private List<Post> testListe = new ArrayList<Post>();
 //private List<Post> postListTest = new ArrayList<Post>();
 
 @BeforeEach
-private void creatPostList(){
+public void creatPostList(){
     Post post1 = new Post("Trude", "Vakker dag på hytta med sol og blå himmel", LocalDate.of(2022, 8, 15));
     Post post2 = new Post("Reidar ", "Nådde nye høyder, og var på Galdepiggen idag", LocalDate.of(2010, 4, 11));
     Post post3 = new Post("Guro", "Masse regn denne turen så ble mye kortspill", LocalDate.of(2022, 11, 3));

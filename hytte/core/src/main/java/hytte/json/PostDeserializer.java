@@ -1,7 +1,7 @@
 package hytte.json;
 
 import java.io.IOException;
-
+import java.time.LocalDate;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -28,13 +28,12 @@ public class PostDeserializer extends JsonDeserializer<Post> {
         if (jsonNode instanceof ObjectNode) {
             ObjectNode objectNode = (ObjectNode) jsonNode;
 
-            Post post = new Post("Placeholder", "Placeholder", null);
+            Post post = new Post("Placeholder", "Placeholder", LocalDate.now());
 
-            /*JsonNode dateNode = objectNode.get("date");
+            JsonNode dateNode = objectNode.get("date");
             if (dateNode instanceof TextNode) {
-                Date date = new SimpleDateFormat("dd/MM/yyy").parse(dateNode.asText());
-                post.setDate((null));
-            }*/
+                post.setDateRead(((TextNode) dateNode).asText());
+            }
             JsonNode nameNode = objectNode.get("name");
             if (nameNode instanceof TextNode) {
                 post.setName(((TextNode) nameNode).asText());
