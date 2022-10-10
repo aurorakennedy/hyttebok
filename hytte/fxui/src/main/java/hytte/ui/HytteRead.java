@@ -1,9 +1,6 @@
 package hytte.ui;
 
-import java.io.IOException;
 import java.nio.file.Paths;
-
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import hytte.core.PostList;

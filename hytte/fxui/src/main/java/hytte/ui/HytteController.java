@@ -1,8 +1,6 @@
 package hytte.ui;
 
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.LocalDate;
 
 import hytte.core.Post;
@@ -42,9 +40,6 @@ public class HytteController {
         HytteRead read = new HytteRead();
         if (read.read() != null) {
             postList = read.read();
-        }
-        for (Post post : postList.getPostList()) {
-            System.out.println(post.getName());
         }
     }
 
