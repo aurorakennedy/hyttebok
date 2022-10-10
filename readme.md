@@ -7,13 +7,13 @@
 Prosjektet vårt går ut på at vi skal lage en hyttebok hvor man kan loggføre besøk på hytta. Loggen skal være tilknyttet både en person og ett tidspunkt, slik at vi kan hente ut tidligere loggføriringer knyttet til tid eller person. 
 
 ### Kjøring av prosjeketet
-Før man kan åpne prosjektet for første gang må man kjøre '''mvn clean install''' fra hytte-mappa på rotnivå.
+Før man kan åpne prosjektet for første gang må man kjøre `mvn clean install` fra hytte-mappa på rotnivå.
 
-Prosjektet må kjøres fra fxui-modulen, ved å kjøre '''cd fxui''', etterfulgt av '''mvn javafx:run'''.
+Prosjektet må kjøres fra fxui-modulen, ved å kjøre `cd fxui` fra hytte-mappa, etterfulgt av `mvn javafx:run`.
 
 ### Prosjektstruktur 
 
-På rotnivået har vi mappen, _docs_, _hytte_ og en _readme_
+På rotnivået har vi mappene _docs_, _hytte_ og en _readme_
  fil. 
  
 Inne i *docs*  mappen har vi ny mappe struktur hvor vi vil få en ny mappe per innlevering. Til nå ligger det to mapper der, *realease1* og *release2*, der dokumentasjonen på første og andre innlevering ligger.
@@ -35,6 +35,6 @@ Dette er mappen for fxui-modulen til prosjektet. Den inneholder brukergrensesnit
 
 #### 4. *hytte* --> *config*
 Mappen inneholder konfigurasjonsfiler for maven-pluginsene Checkstyle og Spotbugs. 
-De brukes for å endre hva som testes ved bruk av kommandoen '''mvn verify'''
+De brukes for å endre hva som testes ved bruk av kommandoen `mvn verify`
 
  
