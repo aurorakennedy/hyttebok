@@ -28,7 +28,7 @@ public class PostDeserializer extends JsonDeserializer<Post> {
         if (jsonNode instanceof ObjectNode) {
             ObjectNode objectNode = (ObjectNode) jsonNode;
 
-            Post post = new Post(null, null, null);
+            Post post = new Post("Placeholder", "Placeholder", null);
 
             /*JsonNode dateNode = objectNode.get("date");
             if (dateNode instanceof TextNode) {

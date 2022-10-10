@@ -14,7 +14,6 @@ public class PostModule extends SimpleModule{
     
     private static final String NAME = "PostModule";
     private static final VersionUtil VERSION_UTIL = new VersionUtil(){};
-    private final static String postList = "{\"posts\":[{\"name\":\"aksel\",\"postText\":\"hei\"}]}";
 
     public PostModule () {
         super(NAME, VERSION_UTIL.version());
@@ -22,19 +21,6 @@ public class PostModule extends SimpleModule{
         addSerializer(PostList.class, new PostListSerializer());
         addDeserializer(Post.class, new PostDeserializer());
         addDeserializer(PostList.class, new PostListDeserializer());
-    }
-
-    public static void main(String[] args) {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.registerModule(new PostModule());
-
-        try {
-            PostList list = mapper.readValue(postList, PostList.class);
-            System.out.println(postList);
-            System.out.println(list);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
 }

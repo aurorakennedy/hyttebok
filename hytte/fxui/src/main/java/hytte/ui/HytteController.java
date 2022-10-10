@@ -43,6 +43,9 @@ public class HytteController {
         if (read.read() != null) {
             postList = read.read();
         }
+        for (Post post : postList.getPostList()) {
+            System.out.println(post.getName());
+        }
     }
 
     //metode som lager Alert-box med IllegalArgumentException som feilmelding
