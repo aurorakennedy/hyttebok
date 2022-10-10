@@ -45,6 +45,7 @@ public class Post {
 
 
     private Boolean validName(String s){
+        System.out.println(s);
         if (s == null || s == ""){
             return false;
         }

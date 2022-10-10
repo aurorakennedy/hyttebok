@@ -1,8 +1,6 @@
 package hytte.ui;
 
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.LocalDate;
 
 import hytte.core.Post;
@@ -18,7 +16,7 @@ import javafx.scene.control.Alert.AlertType;
 
 public class HytteController {
 
-    PostList postList = new PostList();
+    private PostList postList = new PostList();
     
 
     @FXML
@@ -37,6 +35,12 @@ public class HytteController {
         datePicker.setValue(LocalDate.now());
         //saveButton.setVisible(false);
         //previousPostsButton.setVisible(false);
+
+        //Oppdaterer postList med tidligere innlegg i hytteboken
+        HytteRead read = new HytteRead();
+        if (read.read() != null) {
+            postList = read.read();
+        }
     }
 
     //metode som lager Alert-box med IllegalArgumentException som feilmelding
@@ -52,7 +56,7 @@ public class HytteController {
             Post post = new Post(visitors.getText(), experience.getText(), datePicker.getValue());
             postList.addPost(post);
             
-            HytteSave save = new HytteSave(visitors.getText(), experience.getText(), datePicker.getValue());
+            HytteSave save = new HytteSave(postList);
             save.commitSave();
 
             visitors.clear();
