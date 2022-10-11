@@ -38,7 +38,7 @@ public class PostList {
     public List<Post> getPostsByName(String name) {
         List<Post> postsByName = new ArrayList<Post>();
         for (Post post : postList) {
-            if (post.getName() == name) {
+            if (post.getName().equals(name)) {
                 postsByName.add(post);
             }
         }
