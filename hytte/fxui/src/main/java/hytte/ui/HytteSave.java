@@ -8,13 +8,9 @@ import java.io.IOException;
 
 public class HytteSave {
 
-    private PostList list;
+    public HytteSave() { }
 
-    public HytteSave(PostList list) {
-        this.list = list;
-    }
-
-    public void commitSave() throws IOException {
+    public void commitSave(PostList list) throws IOException {
 
         /*Release 2 forsøk på fillagring*/
         ObjectMapper mapper = new ObjectMapper();
