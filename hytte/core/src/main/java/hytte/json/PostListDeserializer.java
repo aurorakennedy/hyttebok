@@ -14,13 +14,13 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import hytte.core.PostList;
 import hytte.core.Post;
 
-public class PostListDeserializer extends JsonDeserializer<PostList>{
+public class PostListDeserializer extends JsonDeserializer<PostList> {
 
     private PostDeserializer postDeserializer = new PostDeserializer();
 
     @Override
     public PostList deserialize(JsonParser parser, DeserializationContext ctxt) throws IOException, JsonProcessingException {
-       
+
         TreeNode treeNode = parser.getCodec().readTree(parser);
         if (treeNode instanceof ObjectNode) {
             ObjectNode objectNode = (ObjectNode) treeNode;
@@ -38,5 +38,4 @@ public class PostListDeserializer extends JsonDeserializer<PostList>{
         }
         return null;
     }
-    
 }

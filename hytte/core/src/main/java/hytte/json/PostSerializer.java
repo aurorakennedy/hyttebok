@@ -17,15 +17,14 @@ public class PostSerializer extends JsonSerializer<Post> {
         "postText": "text"
      }
      */
-  
+
     @Override
     public void serialize(Post post, JsonGenerator jGen, SerializerProvider serializerProvider) throws IOException {
       jGen.writeStartObject();
-  
+
       jGen.writeStringField("date", post.getDate());
       jGen.writeStringField("name", post.getName());
       jGen.writeStringField("postText", post.getContent());
       jGen.writeEndObject();
-      
     }
-  }
+}
