@@ -9,7 +9,7 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import hytte.core.Post;
 import hytte.core.PostList;
 
-public class PostListSerializer extends JsonSerializer<PostList>{
+public class PostListSerializer extends JsonSerializer<PostList> {
 
     /*
      format:
@@ -31,7 +31,5 @@ public class PostListSerializer extends JsonSerializer<PostList>{
         }
         jGen.writeEndArray();
         jGen.writeEndObject();
-        
     }
-    
 }
