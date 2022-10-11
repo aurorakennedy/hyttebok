@@ -18,11 +18,10 @@ public class postTest {
     
     @Test
     public void testConstructer(){
-        /*
         // Sjekker om verdiene er det vi forventer 
         Assertions.assertEquals("Knut", post.getName());
         Assertions.assertEquals("Hei, dette er en test. Håper den funker.", post.getContent());
-        Assertions.assertEquals(LocalDate.of(2000, 11, 4), post.getDate());
+        Assertions.assertEquals("4. nov. 2000", post.getDate());
 
 
         // --- Navn ---
@@ -34,6 +33,5 @@ public class postTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
 			new Post("Trym/Aksel", "Tigergutt", LocalDate.of(2000, 11, 4)); 
 		});
-        */
     }
 }
