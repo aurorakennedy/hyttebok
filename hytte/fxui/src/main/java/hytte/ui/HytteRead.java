@@ -7,12 +7,10 @@ import hytte.core.PostList;
 import hytte.json.PostModule;
 
 public class HytteRead {
-    
 
-    public HytteRead () {}
+    public HytteRead() { }
 
-    public PostList read () {
-        
+    public PostList read() {
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new PostModule());
 
@@ -23,5 +21,4 @@ public class HytteRead {
             return null;
         }
     }
-
 }

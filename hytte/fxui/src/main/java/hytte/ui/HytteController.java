@@ -17,7 +17,6 @@ import javafx.scene.control.Alert.AlertType;
 public class HytteController {
 
     private PostList postList = new PostList();
-    
 
     @FXML
     private TextField visitors; //importerer FXML-TextField-feltene
@@ -26,12 +25,15 @@ public class HytteController {
     private TextArea experience;
 
     @FXML
-    private Button saveButton, previousPostsButton; //importerer FXML-button-feltene
+    private Button saveButton; //importerer FXML-button-feltene
+
+    @FXML
+    private Button previousPostsButton;
 
     @FXML
     private DatePicker datePicker; //importerer FXML-datePicker-feltet
 
-    public void initialize(){
+    public void initialize() {
         datePicker.setValue(LocalDate.now());
         //saveButton.setVisible(false);
         //previousPostsButton.setVisible(false);
@@ -44,21 +46,19 @@ public class HytteController {
     }
 
     //metode som lager Alert-box med IllegalArgumentException som feilmelding
-    private void alert(Exception e){
+    private void alert(Exception e) {
         Alert feilmelding = new Alert(AlertType.ERROR); //lager ALERT-box
         feilmelding.setHeaderText(e.getMessage()); //setter header-teksten i Alert-boksen til å være IllegalArgumentExceptionen som ble utløst
         feilmelding.show(); //viser Alert-boksen
     }
 
     @FXML
-    private void clickSave() throws IOException{
+    private void clickSave() throws IOException {
         try {
             Post post = new Post(visitors.getText(), experience.getText(), datePicker.getValue());
             postList.addPost(post);
-            
             HytteSave save = new HytteSave(postList);
             save.commitSave();
-
             visitors.clear();
             datePicker.setValue(LocalDate.now());
             experience.clear();
@@ -68,11 +68,8 @@ public class HytteController {
     }
 
     @FXML
-    private void clickRead(){
+    private void clickRead() {
         //TODO
-        //make it possible to read previous posts 
+        //make it possible to read previous posts
     }
-
-
-
 }
