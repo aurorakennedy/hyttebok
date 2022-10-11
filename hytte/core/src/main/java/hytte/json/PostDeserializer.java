@@ -18,13 +18,13 @@ public class PostDeserializer extends JsonDeserializer<Post> {
 
     @Override
     public Post deserialize(JsonParser parser, DeserializationContext ctxt) throws IOException, JsonProcessingException {
-        
+
         TreeNode treeNode = parser.getCodec().readTree(parser);
         return deserialize((JsonNode) treeNode);
     }
 
     public Post deserialize(JsonNode jsonNode) {
-        
+
         if (jsonNode instanceof ObjectNode) {
             ObjectNode objectNode = (ObjectNode) jsonNode;
 
@@ -46,6 +46,4 @@ public class PostDeserializer extends JsonDeserializer<Post> {
         }
         return null;
     }
-    
-    
 }
