@@ -27,7 +27,7 @@ public class postTest {
         // --- Navn ---
         //Sjekker at navn ikke kan innholde tall 
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-			new Post("Klara4", "Heihei", LocalDate.of(2000, 11, 4)); 
+			new Post("Klara4", "Heihei", LocalDate.of(2000, 11, 4));  
 		});
         //Sjekker at navn ikke kan inneholde special characters 
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
