@@ -42,4 +42,22 @@ public class HytteAppTest extends ApplicationTest{
         assertNotNull(controller);
     }
 
+    @Test
+    public void visitor() {
+      String newVisitor = "Aurora";
+      String newExperience = "Vi koste oss masse på hytta<33";
+
+      clickOn("#visitors").write(newVisitor);
+      clickOn("#experience").write(newExperience);
+
+      clickOn("#saveButton");
+
+    }
+
 }
+
+
+ 
+   
+
+    
