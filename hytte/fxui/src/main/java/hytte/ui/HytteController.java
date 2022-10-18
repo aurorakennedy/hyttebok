@@ -40,8 +40,8 @@ public class HytteController {
 
         //Oppdaterer postList med tidligere innlegg i hytteboken
         HytteRead read = new HytteRead();
-        if (read.read() != null) {
-            postList = read.read();
+        if (read.read("hyttebok.json") != null) {
+            postList = read.read("hyttebok.json");
         }
     }
 
@@ -58,7 +58,7 @@ public class HytteController {
             Post post = new Post(visitors.getText(), experience.getText(), datePicker.getValue());
             postList.addPost(post);
             HytteSave save = new HytteSave();
-            save.commitSave(postList);
+            save.commitSave(postList, "hyttebok.json");
             visitors.clear();
             datePicker.setValue(LocalDate.now());
             experience.clear();
