@@ -10,12 +10,12 @@ public class HytteSave {
 
     public HytteSave() { }
 
-    public void commitSave(PostList list) throws IOException {
+    public void commitSave(PostList list, String fileName) throws IOException {
 
         /*Release 2 forsøk på fillagring*/
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new PostModule());
-        mapper.writeValue(new File("hyttebok.json"), list);
+        mapper.writeValue(new File("savestate", fileName), list);
 
     }
 

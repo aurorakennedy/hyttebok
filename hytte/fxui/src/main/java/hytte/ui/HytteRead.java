@@ -10,12 +10,12 @@ public class HytteRead {
 
     public HytteRead() { }
 
-    public PostList read() {
+    public PostList read(String fileName) {
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new PostModule());
 
         try {
-            return mapper.readValue(Paths.get("hyttebok.json").toFile(), PostList.class);
+            return mapper.readValue(Paths.get("savestate\\" + fileName).toFile(), PostList.class);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
