@@ -59,9 +59,7 @@ public class HytteController {
 
     public void initialize() {
         datePicker.setValue(LocalDate.now());
-        //saveButton.setVisible(false);
-        //previousPostsButton.setVisible(false);
-
+       
         //Oppdaterer postList med tidligere innlegg i hytteboken
         HytteRead read = new HytteRead();
         if (read.read("hyttebok.json") != null) {
@@ -137,6 +135,6 @@ public class HytteController {
         for (Post post : postList.getPostList()) {
             postsFormatted+=(post.postFormatted()+"\n\n");
         }
-        postsText.setText(postsFormatted);
+        postsText.setText("test");
     }
 }
