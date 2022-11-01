@@ -13,11 +13,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 
@@ -25,9 +23,9 @@ public class HytteController {
 
     private PostList postList = new PostList();
 
-    String postsFormatted;
+    private PreviousController previousController;
 
-
+    
     //input-fields
     @FXML
     private DatePicker datePicker; //importerer FXML-datePicker-feltet
@@ -45,15 +43,6 @@ public class HytteController {
 
     @FXML
     private Button seePreviousPostsButton; 
-
-
-    @FXML
-    private ScrollPane scrollPane; //importerer scrollPane til plassering av innleggene
-
-    
-    @FXML
-    private Text postsText; //importerer tekstfeltet til plassering av innleggene 
-
 
 
 
@@ -74,6 +63,7 @@ public class HytteController {
         feilmelding.show(); //viser Alert-boksen
     }
 
+    
     @FXML
     private void clickSave() throws IOException {
         try {
@@ -89,15 +79,15 @@ public class HytteController {
         }
     }
 
+
     @FXML
-    private void clickRead() {
-        //TODO
-        //make it possible to read previous posts
+    void clickRead(){
+        this.seePreviousPosts();
+        previousController.printPosts();
     }
 
-
     @FXML
-    void seePreviousPosts(ActionEvent event){
+    void seePreviousPosts(){
         //lager og åpner et nytt vindu
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("previousPosts.fxml")); //lager en ny FXML loader som laster inn innholdet i previousPosts.fxml
@@ -107,17 +97,13 @@ public class HytteController {
             stage.setTitle("Posts"); //setter tittelen til selve vinduet til "Posts"
             stage.setScene(new Scene(root1)); //lager ny scene i roten
             stage.show(); //viser nye vinduet
-            printPosts();
+            previousController.printPosts();
         } catch (Exception e){
             alert(e);
         } 
 
 
-        //oppdaterer PostList til å inneholde det som er i den lagrede filen
-        HytteRead read = new HytteRead();
-        if (read.read("hyttebok.json") != null) {
-            postList = read.read("hyttebok.json");
-        }
+
         //lese fra fil til vinduet
         /*for (Post post : postList.getPostList()) { //bla gjennom posts i postlist
             Label overskrift = new Label(); 
@@ -130,11 +116,4 @@ public class HytteController {
         }*/
     }
 
-    @FXML
-    void printPosts(){
-        for (Post post : postList.getPostList()) {
-            postsFormatted+=(post.postFormatted()+"\n\n");
-        }
-        postsText.setText("test");
-    }
 }
