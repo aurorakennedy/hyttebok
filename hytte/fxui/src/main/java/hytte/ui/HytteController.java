@@ -80,24 +80,22 @@ public class HytteController {
     }
 
 
-    @FXML
-    void clickRead(){
-        this.seePreviousPosts();
-        previousController.printPosts();
-    }
 
     @FXML
-    void seePreviousPosts(){
+    void openWindow(ActionEvent event){
         //lager og åpner et nytt vindu
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("previousPosts.fxml")); //lager en ny FXML loader som laster inn innholdet i previousPosts.fxml
             Parent root1 = (Parent) fxmlLoader.load(); //setter parent/rot til den nye filen previousPosts.html
+            PreviousController previousController = fxmlLoader.getController(); //kobler sammen det nye vinduet med en egen kontroller
             Stage stage = new Stage(); //lager nytt vindu
-            //stage.initStyle(StageStyle.TRANSPARENT); //setter vindu-lukke og minimerknappen til transparent
             stage.setTitle("Posts"); //setter tittelen til selve vinduet til "Posts"
             stage.setScene(new Scene(root1)); //lager ny scene i roten
             stage.show(); //viser nye vinduet
+
+            //kaller på metode i kontroller i andre vinduet
             previousController.printPosts();
+
         } catch (Exception e){
             alert(e);
         } 

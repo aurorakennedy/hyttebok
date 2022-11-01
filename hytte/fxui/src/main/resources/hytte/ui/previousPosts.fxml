@@ -11,6 +11,6 @@
             <Font name="American Typewriter" size="30.0" />
          </font>
       </Text>
-      <Text fx:id="postsLabel" layoutX="162.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="efrfe" wrappingWidth="102.21630859375" />
+      <Text fx:id="postsText" layoutX="162.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="----" wrappingWidth="102.21630859375" />
    </children>
 </Pane>
