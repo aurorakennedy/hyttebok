@@ -25,13 +25,14 @@ public class RestAppController {
     /**
      * Method for handling GET-request to the rest server.
      * @return Json representation of the PostList object stored on the rest server side.
-     * @throws JsonProcessingException
+     * @throws Exception
      */
     @GetMapping
-    public String getPostList() throws JsonProcessingException{
+    public String getPostList() throws Exception{
+
         HytteRead hytteReader = new HytteRead();
-        PostList postList = hytteReader.read("hyttebok.json");
-        
+        PostList postList = hytteReader.read("hyttebok.json");    
+
         ObjectMapper om = new ObjectMapper();
         om.registerModule(new PostModule());
         String jsonPostList = om.writeValueAsString(postList);

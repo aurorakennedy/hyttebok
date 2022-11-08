@@ -16,7 +16,6 @@ import hytte.json.PostModule;
 
 //sends GET and POST requests to Spring-server
 public class HytteRequests {
-    
 
     //Method for sending POST-requests to Spring-server
     public Boolean postRequest(PostList postList) throws MalformedURLException, Exception{
