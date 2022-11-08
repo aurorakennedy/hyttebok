@@ -12,10 +12,7 @@ public class PreviousController {
 
     @FXML
     private Text postsText; //importerer tekstfeltet til plassering av innleggene 
-    @FXML
-    private Text scrollPane; //importerer tekstfeltet til plassering av innleggene 
-
-
+    
 
     @FXML
     public void printPosts(){

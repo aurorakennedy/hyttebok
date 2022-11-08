@@ -82,7 +82,7 @@ public class HytteController {
 
 
     @FXML
-    void openWindow(ActionEvent event){
+    private void openWindow(ActionEvent event){
         //lager og åpner et nytt vindu
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("previousPosts.fxml")); //lager en ny FXML loader som laster inn innholdet i previousPosts.fxml
@@ -93,25 +93,13 @@ public class HytteController {
             stage.setScene(new Scene(root1)); //lager ny scene i roten
             stage.show(); //viser nye vinduet
 
-            //kaller på metode i kontroller i andre vinduet
+            //kaller på metode i kontroller til det andre vinduet
             previousController.printPosts();
 
         } catch (Exception e){
             alert(e);
         } 
 
-
-
-        //lese fra fil til vinduet
-        /*for (Post post : postList.getPostList()) { //bla gjennom posts i postlist
-            Label overskrift = new Label(); 
-            overskrift.setText(post.getDate() + "    " + post.getName());
-            Label innhold = new Label(); 
-            innhold.setText(post.getContent()); 
-            //ScrollPane scrollPane = new ScrollPane();
-            //scrollPane.setContent(overskrift);
-            pane.getChildren().add(overskrift);
-        }*/
     }
 
 }
