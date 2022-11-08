@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import hytte.core.PostList;
@@ -19,8 +18,7 @@ import hytte.ui.HytteSave;
 @RequestMapping(RestAppController.CONTROLLER_PATH)
 public class RestAppController {
 
-    public final static String CONTROLLER_PATH = "/hytte";
-    
+    public static final String CONTROLLER_PATH = "/hytte";
 
     /**
      * Method for handling GET-request to the rest server.
@@ -28,10 +26,10 @@ public class RestAppController {
      * @throws Exception
      */
     @GetMapping
-    public String getPostList() throws Exception{
+    public String getPostList() throws Exception {
 
         HytteRead hytteReader = new HytteRead();
-        PostList postList = hytteReader.read("hyttebok.json");    
+        PostList postList = hytteReader.read("hyttebok.json");
 
         ObjectMapper om = new ObjectMapper();
         om.registerModule(new PostModule());
@@ -49,7 +47,7 @@ public class RestAppController {
      * @throws Exception
      */
     @PostMapping
-    public boolean postData(@RequestBody String postedPostList) throws Exception{
+    public boolean postData(@RequestBody String postedPostList) throws Exception {
         HytteSave hytteSaver = new HytteSave();
         ObjectMapper om = new ObjectMapper();
         om.registerModule(new PostModule());
