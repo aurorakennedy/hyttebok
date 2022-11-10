@@ -1,5 +1,6 @@
 package hytte.ui;
 
+import java.io.File;
 import java.nio.file.Paths;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -13,9 +14,10 @@ public class HytteRead {
     public PostList read(String fileName) {
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new PostModule());
-
+        File file = Paths.get(System.getProperty("user.dir"), "//hytte//restapi//savestate//", fileName).toFile();
+        
         try {
-            return mapper.readValue(Paths.get("savestate\\" + fileName).toFile(), PostList.class);
+            return mapper.readValue(file, PostList.class);
         } catch (Exception e) {
             e.printStackTrace();
             return null;

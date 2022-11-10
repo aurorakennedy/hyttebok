@@ -66,10 +66,6 @@
     <property name="fileExtensions" value="java"/>
   </module> -->
 
-  <!-- Checks for whitespace                               -->
-  <!-- See https://checkstyle.org/config_whitespace.html -->
-  <module name="FileTabCharacter"/>
-
   <!-- Miscellaneous other checks.                   -->
   <!-- See https://checkstyle.org/config_misc.html -->
   <module name="RegexpSingleline">
@@ -166,7 +162,7 @@
     <!-- See https://checkstyle.org/config_design.html -->
     <!-- <module name="DesignForExtension"/> -->
     <module name="FinalClass"/>
-    <module name="HideUtilityClassConstructor"/>
+<!--     <module name="HideUtilityClassConstructor"/> -->
     <module name="InterfaceIsType"/>
     <module name="VisibilityModifier"/>
 

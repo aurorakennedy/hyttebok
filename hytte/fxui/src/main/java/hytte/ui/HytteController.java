@@ -1,6 +1,7 @@
 package hytte.ui;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.time.LocalDate;
 
 import hytte.core.Post;
@@ -23,7 +24,7 @@ public class HytteController {
 
     private PostList postList = new PostList();
 
-    private PreviousController previousController;
+    private HytteRequests requester = new HytteRequests();
 
     
     //input-fields
@@ -48,11 +49,18 @@ public class HytteController {
 
     public void initialize() {
         datePicker.setValue(LocalDate.now());
-       
-        //Oppdaterer postList med tidligere innlegg i hytteboken
-        HytteRead read = new HytteRead();
-        if (read.read("hyttebok.json") != null) {
-            postList = read.read("hyttebok.json");
+        getPosts();
+    }
+
+    private void getPosts(){
+        try {
+            PostList getPostList = requester.getRequest();  //Oppdaterer postList med tidligere innlegg fra rest-serveren
+            if (getPostList != null){ //Oppdaterer kun hvis det er tidligere innlegg
+                this.postList = getPostList; 
+            }
+            
+        } catch (Exception e) {
+            alert(e);
         }
     }
 
@@ -69,8 +77,7 @@ public class HytteController {
         try {
             Post post = new Post(visitors.getText(), experience.getText(), datePicker.getValue());
             postList.addPost(post);
-            HytteSave save = new HytteSave();
-            save.commitSave(postList, "hyttebok.json");
+            requester.postRequest(postList); //sender oppdatert PostList til rest-serveren
             visitors.clear();
             datePicker.setValue(LocalDate.now());
             experience.clear();
@@ -82,24 +89,30 @@ public class HytteController {
 
 
     @FXML
-    private void openWindow(ActionEvent event){
+    void openWindow(ActionEvent event) throws URISyntaxException, IOException, InterruptedException{
         //lager og åpner et nytt vindu
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("previousPosts.fxml")); //lager en ny FXML loader som laster inn innholdet i previousPosts.fxml
-            Parent root1 = (Parent) fxmlLoader.load(); //setter parent/rot til den nye filen previousPosts.html
-            PreviousController previousController = fxmlLoader.getController(); //kobler sammen det nye vinduet med en egen kontroller
-            Stage stage = new Stage(); //lager nytt vindu
-            stage.setTitle("Posts"); //setter tittelen til selve vinduet til "Posts"
-            stage.setScene(new Scene(root1)); //lager ny scene i roten
-            stage.show(); //viser nye vinduet
-
-            //kaller på metode i kontroller til det andre vinduet
-            previousController.printPosts();
-
-        } catch (Exception e){
-            alert(e);
-        } 
-
+        
+        getPosts();
+        if (postList.getPostList().size() == 0){
+            alert(new IllegalArgumentException("There are no previous posts"));
+        }
+        else{
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("previousPosts.fxml")); //lager en ny FXML loader som laster inn innholdet i previousPosts.fxml
+                Parent root1 = (Parent) fxmlLoader.load(); //setter parent/rot til den nye filen previousPosts.html
+                PreviousController previousController = fxmlLoader.getController(); //kobler sammen det nye vinduet med en egen kontroller
+                Stage stage = new Stage(); //lager nytt vindu
+                stage.setTitle("Posts"); //setter tittelen til selve vinduet til "Posts"
+                stage.setScene(new Scene(root1)); //lager ny scene i roten
+                stage.show(); //viser nye vinduet
+    
+                //kaller på metode i kontroller i andre vinduet
+                previousController.printPosts(postList);
+    
+            } catch (Exception e){
+                alert(e);
+            } 
+        }
     }
 
 }

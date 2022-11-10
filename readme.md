@@ -9,7 +9,10 @@ Prosjektet vårt går ut på at vi skal lage en hyttebok hvor man kan loggføre 
 ### Kjøring av prosjeketet
 Før man kan åpne prosjektet for første gang må man kjøre `mvn clean install` fra hytte-mappa på rotnivå.
 
-Prosjektet må kjøres fra fxui-modulen, ved å kjøre `cd fxui` fra hytte-mappa, etterfulgt av `mvn javafx:run`.
+Selve appen må kjøres fra fxui-modulen, ved å kjøre `cd fxui` fra hytte-mappa, etterfulgt av `mvn javafx:run`.
+
+Prosjektet bruker en Spring Boot server som kjører lokalt, som tar seg av persistensen. Denne kjøres må fra restapi-modulen i en egen terminal, ved skrive `mvn spring-boot:run`. 
+Man er avhengig av at serveren kjører for å kunne lese og skrive til fil, da all persistens foregår gjennom denne.
 
 ### Prosjektstruktur 
 
@@ -32,6 +35,10 @@ I mappen finner vi en *pom.xml*, som blant annet konfigurerer plugins for denne 
 #### 3. *hytte* --> *fxui*
 Dette er mappen for fxui-modulen til prosjektet. Den inneholder brukergrensesnittet, i form av *hytte.fxml*, samt tilhørende app- og controller-funksjonalitet.
 *pom.xml* definerer igjen plugins og konfigurasjoner til modulen.
+
+#### 3. *hytte* --> *restapi*
+Dette er mappen for restapi-modulen til prosjektet. Den inneholder kjernen av REST-APIen, og bruker Spring Boot. 
+RestAppplication brukes til å starte serveren, og RestAppController styrer hvordan serveren håndterer POST- og GET-requests. Mer detaljer finnes i *docs* --> *release3* --> *restDok.md*.
 
 #### 4. *hytte* --> *config*
 Mappen inneholder konfigurasjonsfiler for maven-pluginsene Checkstyle og Spotbugs. 
