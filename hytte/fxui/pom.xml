@@ -114,14 +114,14 @@
 
 
             <plugin>
-                    <groupId>org.openjfx</groupId>
-                    <artifactId>javafx-maven-plugin</artifactId>
-                    <version>0.0.6</version>
-                    <!-- Default configuration for running -->
-                    <!-- Usage: mvn javafx:run -->
-                    <configuration>
-                        <mainClass>hytte.ui/hytte.ui.HytteApp</mainClass>
-                    </configuration>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.6</version>
+                <!-- Default configuration for running -->
+                <!-- Usage: mvn javafx:run -->
+                <configuration>
+                    <mainClass>hytte.ui/hytte.ui.HytteApp</mainClass>
+                </configuration>
             </plugin>
             <!-- Checkstyle -->
             <plugin>

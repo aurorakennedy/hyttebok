@@ -12,11 +12,10 @@ public class HytteSave {
 
     public void commitSave(PostList list, String fileName) throws IOException {
 
-        /*Release 2 forsøk på fillagring*/
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new PostModule());
-        mapper.writeValue(new File("savestate", fileName), list);
-
+        String path = System.getProperty("user.dir") + "\\hytte\\restapi\\savestate\\";
+        mapper.writeValue(new File(path, fileName), list);
     }
 
 }
