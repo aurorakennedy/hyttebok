@@ -14,7 +14,7 @@ public class HytteRead {
     public PostList read(String fileName) {
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new PostModule());
-        File file = Paths.get(System.getProperty("user.dir"), "\\hytte\\restapi\\savestate\\", fileName).toFile();
+        File file = Paths.get(System.getProperty("user.dir"), "//hytte//restapi//savestate//", fileName).toFile();
         
         try {
             return mapper.readValue(file, PostList.class);
