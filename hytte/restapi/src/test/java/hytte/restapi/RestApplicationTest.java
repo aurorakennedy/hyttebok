@@ -11,6 +11,8 @@ import org.junit.jupiter.api.Test;
 
 public class RestApplicationTest {
     
+    private HytteSave hytteSave;
+
     @Test
     public void moroTest () {
         try {
