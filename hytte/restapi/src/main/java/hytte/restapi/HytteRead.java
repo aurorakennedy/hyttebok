@@ -1,4 +1,4 @@
-package hytte.ui;
+package hytte.restapi;
 
 import java.io.File;
 import java.nio.file.Paths;
@@ -14,7 +14,9 @@ public class HytteRead {
     public PostList read(String fileName) {
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new PostModule());
-        File file = Paths.get(System.getProperty("user.dir"), "//hytte//restapi//savestate//", fileName).toFile();
+        //System.out.println("User dir: " + System.getProperty("user.dir"));
+        File file = Paths.get(System.getProperty("user.dir"), "//savestate//", fileName).toFile();
+        //File file = Paths.get(System.getProperty("user.dir"), "//hytte//restapi//savestate//", fileName).toFile();
         
         try {
             return mapper.readValue(file, PostList.class);

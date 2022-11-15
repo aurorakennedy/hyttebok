@@ -10,8 +10,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import hytte.core.PostList;
 import hytte.json.PostModule;
-import hytte.ui.HytteRead;
-import hytte.ui.HytteSave;
 
 //makes the spring server respong to GET and POST requests
 @RestController
@@ -50,7 +48,7 @@ public class RestAppController {
     public boolean postData(@RequestBody String postedPostList) throws Exception {
         HytteSave hytteSaver = new HytteSave();
         ObjectMapper om = new ObjectMapper();
-        om.registerModule(new PostModule());
+            om.registerModule(new PostModule());
         try {
             PostList deserealizedPostList = om.readValue(postedPostList, PostList.class);
             hytteSaver.commitSave(deserealizedPostList, "hyttebok.json");
