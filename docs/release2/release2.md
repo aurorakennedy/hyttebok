@@ -34,14 +34,13 @@ Prosjektet bruker nå også pluginsene Checkstyle og Spotbugs, og vi har ryddet 
 Prosjektet har som nevnt fått flere nye klasser, som brukes for lesing og skriving til fil.
 
 Klassediagram på nåværende tidspunkt:
-![Example](../../hytte/doc_resources/klasseDiagram.png)
-
+![Example](/docs/release2/DiagramClassR2.png)
 
 ### Valg knyttet til arbeidsvaner, arbeidsflyt og kodekvalitet
 
 #### Arbeidsvaner og arbeidsflyt
 
-Vi har hatt minst ett møte i uka, der vi jobber sammen og fordeler arbeidsoppgaver. Dette har fungert bra, og vi sikter på å fortsette med dette ut prosjektet.
+Vi har hatt minst ett møte i uka, der vi først oppdaterer hverandre på arbeidet som er gjort, fordeler videre arbeidsoppgaver og jobber videre sammen. Vi prøver å følge Scrum-rammeverket i gruppearbeidet. Dette har fungert bra, og vi sikter på å fortsette med slik ut prosjektet.
 
 Vi har fortsatt å ta i bruk issues, brancher og milestones i gitlab.
 I tillegg har vi begynt å ta i bruk merge requests for branchene, og forsøker å vende oss til å tagge relevante issues i commit-meldinger. Spesielt issue-tagging merker vi gir bedre oversikt over prosjektets utvikling i gitlab.
@@ -50,7 +49,7 @@ I tillegg har vi begynt å ta i bruk merge requests for branchene, og forsøker 
 
 Vi har valgt å bruke de foreslåtte testverktøyene Checkstyle, Spotbugs og Jacoco.
 
-Noen av modulene i Checkstyle har vi skrudd av, ettersom vi konkluderte med at de gjorde koden mer uryddig, og dermed virket mot sin hensikt. 
+Noen av modulene i Checkstyle har vi skrudd av, ettersom vi konkluderte med at de gjorde koden mer uryddig, og dermed virket mot sin hensikt.
 For eksempel var det en modul som klagde hvis et parameter til en konstruktør hadde samme navn som en av klassens attributter. Dette vurderte vi som unødvendige og uoversiktlige endringer.
 
 Spotbugs har vi ikke endret innstillingene til enda. Vi har likevel opprettet en exclude.xml konfigurasjonsfil for å lett kunne endre senere.
