@@ -14,7 +14,7 @@ public class HytteSave {
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new PostModule());
-        String path = "//savestate//";
+        String path = System.getProperty("user.dir") + "//savestate//";
         mapper.writeValue(new File(path, fileName), list);
     }
 
