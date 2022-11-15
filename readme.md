@@ -10,11 +10,9 @@ Prosjektet vårt går ut på at vi skal lage en hyttebok hvor man kan loggføre 
 
 ### Kjøring av prosjeketet
 
-<br>
-Før man kan åpne prosjektet for første gang må man kjøre `mvn clean install` fra hytte-mappa på rotnivå.
-<br> <br>
+Før man kan åpne prosjektet for første gang må man kjøre `mvn clean install` fra hytte-mappa på rotnivå. 
 
-Prosjektet bruker en Spring Boot server som kjører lokalt, som tar seg av persistensen. Denne kjøres må fra restapi-modulen i en egen terminal, ved skrive `mvn spring-boot:run`.
+Prosjektet bruker en Spring Boot server som kjører lokalt, som tar seg av persistensen. Denne kjøres må fra restapi-modulen i en egen terminal, ved skrive `mvn spring-boot:run`. 
 Man er avhengig av at serveren kjører for å kunne lese og skrive til fil, da all persistens foregår gjennom denne.
 <br>
 
