@@ -26,7 +26,6 @@ public class HytteController {
 
     private HytteRequests requester = new HytteRequests();
 
-    
     //input-fields
     @FXML
     private DatePicker datePicker; //importerer FXML-datePicker-feltet
@@ -43,7 +42,7 @@ public class HytteController {
     private Button saveButton;
 
     @FXML
-    private Button seePreviousPostsButton; 
+    private Button seePreviousPostsButton;
 
 
 
@@ -52,13 +51,13 @@ public class HytteController {
         getPosts();
     }
 
-    private void getPosts(){
+    private void getPosts() {
         try {
             PostList getPostList = requester.getRequest();  //Oppdaterer postList med tidligere innlegg fra rest-serveren
-            if (getPostList != null){ //Oppdaterer kun hvis det er tidligere innlegg
-                this.postList = getPostList; 
+            if (getPostList != null) { //Oppdaterer kun hvis det er tidligere innlegg
+                this.postList = getPostList;
             }
-            
+
         } catch (Exception e) {
             alert(e);
         }
@@ -71,7 +70,7 @@ public class HytteController {
         feilmelding.show(); //viser Alert-boksen
     }
 
-    
+
     @FXML
     private void clickSave() throws IOException {
         try {
@@ -89,14 +88,13 @@ public class HytteController {
 
 
     @FXML
-    void openWindow(ActionEvent event) throws URISyntaxException, IOException, InterruptedException{
+    void openWindow(ActionEvent event) throws URISyntaxException, IOException, InterruptedException {
         //lager og åpner et nytt vindu
-        
+
         getPosts();
-        if (postList.getPostList().size() == 0){
+        if (postList.getPostList().size() == 0) {
             alert(new IllegalArgumentException("There are no previous posts"));
-        }
-        else{
+        } else {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("previousPosts.fxml")); //lager en ny FXML loader som laster inn innholdet i previousPosts.fxml
                 Parent root1 = (Parent) fxmlLoader.load(); //setter parent/rot til den nye filen previousPosts.html
@@ -105,13 +103,13 @@ public class HytteController {
                 stage.setTitle("Posts"); //setter tittelen til selve vinduet til "Posts"
                 stage.setScene(new Scene(root1)); //lager ny scene i roten
                 stage.show(); //viser nye vinduet
-    
+
                 //kaller på metode i kontroller i andre vinduet
                 previousController.printPosts(postList);
-    
-            } catch (Exception e){
+
+            } catch (Exception e) {
                 alert(e);
-            } 
+            }
         }
     }
 
