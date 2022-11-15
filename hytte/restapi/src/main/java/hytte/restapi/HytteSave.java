@@ -1,4 +1,4 @@
-package hytte.ui;
+package hytte.restapi;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import hytte.core.PostList;
@@ -14,7 +14,7 @@ public class HytteSave {
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new PostModule());
-        String path = System.getProperty("user.dir") + "//hytte//restapi//savestate//";
+        String path = "//savestate//";
         mapper.writeValue(new File(path, fileName), list);
     }
 
