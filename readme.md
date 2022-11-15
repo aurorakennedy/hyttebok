@@ -10,26 +10,28 @@ Prosjektet vårt går ut på at vi skal lage en hyttebok hvor man kan loggføre 
 
 ### Kjøring av prosjeketet
 
-sudo apt-get update
-
-sudo apt-get install at-spi2-core
-
 <br>
 Før man kan åpne prosjektet for første gang må man kjøre `mvn clean install` fra hytte-mappa på rotnivå.
-
-Selve appen må kjøres fra fxui-modulen, ved å kjøre `cd fxui` fra hytte-mappa, etterfulgt av `mvn javafx:run`.
+<br> <br>
 
 Prosjektet bruker en Spring Boot server som kjører lokalt, som tar seg av persistensen. Denne kjøres må fra restapi-modulen i en egen terminal, ved skrive `mvn spring-boot:run`.
 Man er avhengig av at serveren kjører for å kunne lese og skrive til fil, da all persistens foregår gjennom denne.
+<br>
+
+
+Selve appen må kjøres fra fxui-modulen, ved å kjøre `cd fxui` fra hytte-mappa, etterfulgt av `mvn javafx:run`.
+
+
+<br>
 
 ### Prosjektstruktur
 
 På rotnivået har vi mappene _docs_, _hytte_ og en _readme_
 fil.
 
-Inne i _docs_ mappen har vi ny mappe struktur hvor vi vil få en ny mappe per innlevering. Til nå ligger det to mapper der, _realease1_ og _release2_, der dokumentasjonen på første og andre innlevering ligger.
+Inne i _docs_ mappen har vi ny mappe struktur hvor vi vil få en ny mappe per innlevering. Vi har nå tre mapper der, _realease1_, _release2_, og _release3_ der dokumentasjonen på hver innlevering ligger
 
-I mappen _hytte_ har vi fem strukturen som er byggd opp slik:
+I mappen _hytte_ har vi seks strukturen som er byggd opp slik:
 
 #### 1. _hytte_ --> _pom.xml_
 
