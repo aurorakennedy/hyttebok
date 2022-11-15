@@ -1,29 +1,30 @@
 ## Hyttebok - Release3 dokumentasjon
 
-I denne øvingen har vi utvidet funksjonaliteten til prosjektet, og **\*\***\_\_**\*\***rest-server.
+I denne øvingen har vi utvidet funksjonaliteten til prosjektet, og implementert rest-server ved å bruke Spring Boot.
 Link til Milestone 3 i gitlab:
 https://gitlab.stud.idi.ntnu.no/it1901/groups-2022/gr2208/gr2208/-/milestones/3#tab-issues
 
 ### Modularisering
 
-Vi har nå fått en ny modul _vrfergr_, i tillegg til allerede eksisterende _core_ og _fxui_.**\*\***\_\_**\*\***
+Vi har nå fått en ny modul _restapi_, i tillegg til allerede eksisterende _core_ og _fxui_.
+_restapi_-modulen bruker Spring Boot til å kjøre en lokale server, og all persistens foregår nå gjennom denne modulen. REST-API-dokumentasjonens kan leses i _restDok.md_ 
 
 ### Arkitektur
 
-Fortsatt lite logikk i kontroller-klassene. Følger Model-View-Controller prinsippet. **\*\*\*\***\_\_**\*\*\*\***
+Fortsatt lite logikk i kontroller-klassene. Følger Model-View-Controller prinsippet. 
+Persistensen er som nevnt flyttet fra _fxui_ til _restapi_, ettersom det kun er REST-serveren som nå bruker disse klassene.
 
 ### Kodekvalitet og testing
 
-Samme som i release 2, derfor kanskje ikke nødvendig????
-
 Alle modulene testes.
 Testdekningsgraden blir fortsatt rapportert med Jacoco.
-Prosjektet bruker nå også pluginsene Checkstyle og Spotbugs, og vi har ryddet opp i koden tilsvarende deres tilbakemeldinger. Konfigurasjonsfilene til disse ligger i _hytte_ --> _config_.
+Prosjektet bruker nå også pluginsene Checkstyle og Spotbugs, og vi har ryddet opp i koden tilsvarende deres tilbakemeldinger. Konfigurasjonsfilene til checkstyle ligger i _hytte_ --> _config_ --> _checkstyle.config.xml_.
 
 ### Struktur
 
 Som nevnt, har en del strukturielle ting endret seg, og vi har laget tre diagrammer for å illustrere den oppdaterte arkitekturen.
 Klassediagram:
+SKRIVE HVILKE KLASSER VI IKKE INKLUDERTE
 ![Example](/docs/release3/DiagramClassR3.png)
 Pakkediagram:
 ![Example](/docs/release3/DiagramPackage.png)
@@ -38,4 +39,6 @@ Vi har fortsatt å bruke klare mål og Scrum-arbeidsvaner til å drive arbeidet 
 
 #### Kodekvalitet
 
-Bruker fortsatt Checkstyle, Spotbugs og Jacoco. Har vi endret Spotbugs nå? Sto om det i dokumentasjon 2...**\_\_**
+Bruker fortsatt Checkstyle, Spotbugs og Jacoco. 
+Det er gjort noen endringer i Checkstyle-konfigurasjonen, dvs vi har skrudd av et par moduler til.
+Vi valgte å ikke konfigurere SpotBugs, så konfigurasjonsfilen til Spotbugs som tidligere lå i _hytte/config/spotbugs_ er slettet.
