@@ -29,19 +29,4 @@ public class PostList {
         return copiedList;
     }
 
-    /**
-     * @param name
-     * The string you want to get posts by.
-     * @return
-     * List of posts authored by name.
-     */
-    public List<Post> getPostsByName(String name) {
-        List<Post> postsByName = new ArrayList<Post>();
-        for (Post post : postList) {
-            if (post.getName().equals(name)) {
-                postsByName.add(post);
-            }
-        }
-        return postsByName;
-    }
 }

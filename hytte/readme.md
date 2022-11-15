@@ -1,15 +1,21 @@
-**Beskrivelse av hytteboka**
+## Beskrivelse av hytteboka
 
-Prosjektet vårt går ut på at vi skal lage en digital hyttebok. I hytteboka skal besøkende kunne fortelle om hvordan de syns hytteturen har vært. Dette vil fungere ved at de legger inn ett navn, en dato og skriver en oppsummering av turen som vil publiseres til boka. Loggføringen vil bli koblet opp med navnet og datoen, vi tenker dette kan være nyttig hvis vi vil utvide applikasjonen sånn at man kan finne gamle innlegg basert på dato eller navn. Dette er derimot ikke den viktigste funksjonaliteten til applikasjonen, og ikke høyest prioritet. Det er viktigere å kunne få opp gamle loggføringer fra boka, slik at man kan lese og mimre over gamle hendelser på hytta.
+Prosjektet vårt går ut på at vi skal lage en digital hyttebok. I hytteboka skal besøkende kunne fortelle om hvordan de syns hytteturen har vært. Dette vil fungere ved at de legger inn ett navn, en dato og skriver en oppsummering av turen som vil publiseres til boka. Hver loggføringen vil bli lagret med navnet, datoen og innlegget, i en liste med alle loggføringene.
 
 Her er et illustrerende skjermbilde for hvordan appen skal fylles inn.
-![Example](doc_resources/eksempel.jpg)
-<br />
-<br />
+![Example](doc_resources/exampleNewPost.png)
+
+Brukeren har mulighet til å lese de tidligere innleggene, ved å trykke på en knapp på forsiden av applikasjonen, som heter "Se tidligere". Her vil man kunne lese og mimre over gamle hendelser på hytta.
+
+Her er et illustrerende bilde av denne siden.
+![Example](doc_resources/examplePreviousPosts.png)
 <br />
 
-**Brukercase**
+## Brukstilfeller
 
-Vi har lagd to brukercaser som tar for seg hvorfor man kunne tenke seg å ha en digital hyttebok i stede for en fysisk. Case 1 er fra hytteier sitt perspektiv og case 2 er fra noen som leier hytta sitt perspektiv.
+Vi har lagd tre brukercaser som tar for seg hvorfor man kunne tenke seg å ha en digital hyttebok. Case 1 er fra hytteier sitt perspektiv og case 2 er fra perspektivet til noen bekjente som leier hytta.
 
-![Usercases](doc_resources/userCases.jpg)
+I tillegg har vi laget en tredje case for utvidelsen av funksjonaliteten. Denne casen er bestemor som vil lese innlegg fra utlandet.
+
+![Usercases](doc_resources/userCase1-2.jpg)
+![Usercases](doc_resources/userCase3.jpg)
