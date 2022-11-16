@@ -6,12 +6,23 @@ import org.hamcrest.Matchers;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
-import org.junit.jupiter.api.BeforeAll;
+
+import java.beans.Transient;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class RestApplicationTest {
     
     private HytteSave hytteSave;
+    private HytteRead hytteRead;
+    private RestAppController restController;
+
+    @BeforeEach
+    public void setUp() {
+        hytteSave = new HytteSave();
+        hytteRead = new HytteRead();
+        restController = new RestAppController();
+    }
 
     @Test
     public void moroTest () {
@@ -20,6 +31,11 @@ public class RestApplicationTest {
         } catch (Exception e) {
             fail();
         }
+    }
+
+    @Test
+    public void testAPI() {
+        
     }
 
 }
