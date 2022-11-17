@@ -15,6 +15,7 @@ public class PreviousController {
     /**
      * Method for displaying previous Posts in FXML ScrollPane.
      * @param postList The PostList containing the previous posts.
+     * @return String with reformatted posts.
      */
     @FXML
     public String printPosts(PostList postList) {
