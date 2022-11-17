@@ -28,5 +28,4 @@ public class PostList {
         }
         return copiedList;
     }
-
 }
