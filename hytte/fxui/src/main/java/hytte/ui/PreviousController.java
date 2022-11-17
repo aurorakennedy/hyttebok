@@ -12,6 +12,10 @@ public class PreviousController {
     @FXML
     private Text scrollPane; //importerer tekstfeltet til plassering av innleggene
 
+    /**
+     * Method for displaying previous Posts in FXML ScrollPane.
+     * @param postList The PostList containing the previous posts.
+     */
     @FXML
     public String printPosts(PostList postList) {
 

@@ -49,7 +49,7 @@ public class Post {
     }
 
     private Boolean validName(String s) {
-        if (s.equals("")) {
+        if (s.trim().isEmpty()) {
             return false;
         }
 

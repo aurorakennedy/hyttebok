@@ -51,6 +51,10 @@ public class HytteController {
         getPosts();
     }
 
+    /**
+     * Sends a GET-request to Spring Boot server, using HytteRequests.
+     * Updates postList with server response.
+     */
     private void getPosts() {
         try {
             PostList getPostList = requester.getRequest();  //Oppdaterer postList med tidligere innlegg fra rest-serveren
@@ -59,11 +63,15 @@ public class HytteController {
             }
 
         } catch (Exception e) {
-            alert(e);
+            Exception e2 = new Exception("Unable to retrieve PostList from server. Probably not running.", e);
+            alert(e2);
         }
     }
 
-    //metode som lager Alert-box med IllegalArgumentException som feilmelding
+    /**
+     * Opens an Alert-box with IllegalArgumentException as error.
+     * @param e Exception to inform user about.
+     */
     private void alert(Exception e) {
         Alert feilmelding = new Alert(AlertType.ERROR); //lager ALERT-box
         feilmelding.setHeaderText(e.getMessage()); //setter header-teksten i Alert-boksen til å være IllegalArgumentExceptionen som ble utløst
@@ -71,8 +79,11 @@ public class HytteController {
     }
 
 
+    /**
+     * Sends the updated postList to Spring Boot server, using HytteRequests.
+     */
     @FXML
-    private void clickSave() throws IOException {
+    private void clickSave() {
         try {
             Post post = new Post(visitors.getText(), experience.getText(), datePicker.getValue());
             postList.addPost(post);
@@ -81,12 +92,20 @@ public class HytteController {
             datePicker.setValue(LocalDate.now());
             experience.clear();
         } catch (Exception e) {
-            alert(e);
+            Exception e1 = new Exception("Unable to post to server. Probably not running.", e);
+            alert(e1);
         }
     }
 
 
 
+    /**
+     * Opens new window with previous posts from the HytteBok. Uses getPosts() to retrieve them.
+     * @param event The click that executed the method.
+     * @throws URISyntaxException
+     * @throws IOException
+     * @throws InterruptedException
+     */
     @FXML
     void openWindow(ActionEvent event) throws URISyntaxException, IOException, InterruptedException {
         //lager og åpner et nytt vindu

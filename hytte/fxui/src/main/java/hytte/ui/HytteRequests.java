@@ -17,7 +17,13 @@ import hytte.json.PostModule;
 //sends GET and POST requests to Spring-server
 public class HytteRequests {
 
-    //Method for sending POST-requests to Spring-server
+    /**
+     * Method for sending HTTP-POST requests to the Spring Boot server.
+     * @param postList The PostList object to be posted to and stored on the server.
+     * @return True if the request was successfully received, false otherwise.
+     * @throws MalformedURLException
+     * @throws Exception
+     */
     public Boolean postRequest(PostList postList) throws MalformedURLException, Exception {
         URI uri = new URI("http://localhost:8080/hytte");
         ObjectMapper om = new ObjectMapper();
@@ -44,7 +50,13 @@ public class HytteRequests {
         }
     }
 
-    //Method for sending GET-request to rest server.
+    /**
+     * Method for sending HTTP-GET requests to the Spring Boot server.
+     * @return The retreieved PostList object from the server.
+     * @throws URISyntaxException
+     * @throws IOException
+     * @throws InterruptedException
+     */
     public PostList getRequest() throws URISyntaxException, IOException, InterruptedException {
         URI uri = new URI("http://localhost:8080/hytte");
         HttpRequest request = HttpRequest.newBuilder(uri).header("Accept", "application/json").GET().build(); //GET request

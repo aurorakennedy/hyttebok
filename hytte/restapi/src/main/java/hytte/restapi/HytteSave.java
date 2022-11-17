@@ -10,6 +10,11 @@ public class HytteSave {
 
     public HytteSave() { }
 
+    /**
+     * @param list The PostList you want to write to file.
+     * @param fileName Name of the file you want to write to.
+     * @throws IOException If unable to write to given file.
+     */
     public void commitSave(PostList list, String fileName) throws IOException {
 
         ObjectMapper mapper = new ObjectMapper();
