@@ -11,6 +11,10 @@ public class HytteRead {
 
     public HytteRead() { }
 
+    /**
+     * @param fileName Name of the file you want to read from.
+     * @return The PostList object stored in fileName.
+     */
     public PostList read(String fileName) {
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new PostModule());

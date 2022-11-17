@@ -21,7 +21,7 @@ public class RestAppController {
     /**
      * Method for handling GET-request to the rest server.
      * @return Json representation of the PostList object stored on the rest server side.
-     * @throws Exception
+     * @throws Exception If unable to retrieve PostList object.
      */
     @GetMapping
     public String getPostList() throws Exception {
@@ -42,7 +42,7 @@ public class RestAppController {
      * Method for handling POST-requests to the rest server.
      * @param postedPostList Json serialized PostList object.
      * @return True if the serialized PostList was successfully received and store.
-     * @throws Exception
+     * @throws Exception If unable to store the given postedPostList.
      */
     @PostMapping
     public boolean postData(@RequestBody String postedPostList) throws Exception {
