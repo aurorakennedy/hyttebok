@@ -20,7 +20,7 @@ public class RestAppController {
 
     /**
      * Method for handling GET-request to the rest server.
-     * @return Json representation of the PostList object stored on the rest server side.
+     *  @return Json representation of the PostList object stored on the rest server side.
      * @throws Exception
      */
     @GetMapping
