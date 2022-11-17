@@ -2,7 +2,6 @@ module hytte.ui {
 
     requires javafx.controls;
     requires javafx.fxml;
-    requires org.json;
     requires java.net.http;
 
     requires transitive hytte.core;

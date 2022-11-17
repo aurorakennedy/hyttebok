@@ -52,15 +52,6 @@
             <version>20220320</version>
         </dependency>
 
-        <!--Mockito-->
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>4.9.0</version>
-            <scope>test</scope>
-        </dependency>
-
-
         <!--Spring-Boot  -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -74,11 +65,11 @@
             <version>2.7.5</version>
 		</dependency>
 
-        <!--Testing REST-api-->
+        <!--Mockito-->
         <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>4.1.1</version>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>4.9.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -89,6 +80,18 @@
             <version>3.0.8</version>
         </dependency>
 
+        <!--Spring-Boot  -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+            <version>2.7.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+            <version>2.7.5</version>
+		</dependency>
 
     </dependencies>
 

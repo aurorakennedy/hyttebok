@@ -54,6 +54,15 @@ public class HytteAppTest extends ApplicationTest{
 
     }
 
+    @Test
+    public void readPreviousPost() {
+        Post post1 = new Post("Klara", "Gikk lang tur i skogen! møtte på en elg", LocalDate.of(2022, 8, 15));
+        Post post2 = new Post("Trym og Aksel", "Vi bada i fjellvann", LocalDate.of(2022, 5, 30));
+        postList.addPost(post1);
+        postList.addPost(post2);
+        clickOn("#seePreviousPostsButton");
+    }
+
 }
 
 

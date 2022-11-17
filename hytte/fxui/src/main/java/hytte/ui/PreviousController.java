@@ -17,7 +17,7 @@ public class PreviousController {
      * @param postList The PostList containing the previous posts.
      */
     @FXML
-    public void printPosts(PostList postList) {
+    public String printPosts(PostList postList) {
 
         String postFormatted = "";
         String postsFormatted = "";
@@ -27,6 +27,9 @@ public class PreviousController {
             postsFormatted += postFormatted;
         }
 
-        postsText.setText(postsFormatted);
+        if (postsText != null) {
+            postsText.setText(postsFormatted);
+        }
+        return postsFormatted;
     }
 }

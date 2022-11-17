@@ -1,6 +1,6 @@
 module hytte.core {
 
-    requires org.json;
+    //requires org.json;
     requires transitive com.fasterxml.jackson.databind;
 
     exports hytte.core;

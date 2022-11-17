@@ -77,7 +77,6 @@
             <version>20220320</version>
         </dependency>
 
-
     </dependencies>
 
     <build>
@@ -121,8 +120,46 @@
                 <!-- Usage: mvn javafx:run -->
                 <configuration>
                     <mainClass>hytte.ui/hytte.ui.HytteApp</mainClass>
+
+                    <!-- Jlink -->
+                    <compress>2</compress>
+                    <noHeaderFiles>true</noHeaderFiles>
+                    <stripDebug>true</stripDebug>
+                    <noManPages>true</noManPages>
+                    <launcher>hyttefx</launcher>
+                    <jlinkImageName>hyttefx</jlinkImageName>
+                    <jlinkZipName>hyttefx</jlinkZipName>
                 </configuration>
             </plugin>
+
+
+            <!-- config above and below taken from https://dev.to/cherrychain/javafx-jlink-and-jpackage-h9 -->
+            <plugin>
+                <groupId>org.panteleyev</groupId>
+                <artifactId>jpackage-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <configuration>
+                    <name>HytteFX</name>
+                    <appVersion>1.0.0</appVersion>
+                    <vendor>it1901</vendor>
+                    <destination>target/dist</destination>
+                    <module>hytte.ui/hytte.ui.HytteApp</module>
+                    <runtimeImage>target/hyttefx</runtimeImage>
+                    <javaOptions>
+                        <option>-Dfile.encoding=UTF-8</option>
+                    </javaOptions>
+                    <!-- linux options --> 
+                    <linuxShortcut>true</linuxShortcut>
+                    <linuxMenuGroup>HytteFX</linuxMenuGroup>
+
+                    <!-- windows options --> 
+                    <winDirChooser>true</winDirChooser>
+                    <winShortcut>true</winShortcut>
+                    <winMenu>true</winMenu>
+                    <winMenuGroup>HytteFX</winMenuGroup>
+                </configuration>
+            </plugin>
+
             <!-- Checkstyle -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
