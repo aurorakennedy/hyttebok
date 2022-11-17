@@ -13,7 +13,7 @@ public class PreviousController {
     private Text scrollPane; //importerer tekstfeltet til plassering av innleggene
 
     @FXML
-    public void printPosts(PostList postList) {
+    public String printPosts(PostList postList) {
 
         String postFormatted = "";
         String postsFormatted = "";
@@ -23,6 +23,9 @@ public class PreviousController {
             postsFormatted += postFormatted;
         }
 
-        postsText.setText(postsFormatted);
+        if (postsText != null) {
+            postsText.setText(postsFormatted);
+        }
+        return postsFormatted;
     }
 }

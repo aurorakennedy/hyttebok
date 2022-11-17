@@ -73,14 +73,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!--Testing REST-api-->
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>4.1.1</version>
-            <scope>test</scope>
-        </dependency>
-
         <!--Fixing testing issues with spring boot-->
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
