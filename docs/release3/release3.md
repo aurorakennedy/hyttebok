@@ -34,7 +34,7 @@ Alle modulene testes, og testdekningsgraden blir fortsatt rapportert med Jacoco.
 Vi valgte å ikke konfigurere SpotBugs, så konfigurasjonsfilen til Spotbugs, som tidligere lå i _hytte_ --> _config_ --> _spotbugs_, er nå slettet.
 
 Her kan dere se testdekningsgradene i de ulike tre modulene; _core_, _restapi_ og _fxui_.
-Dekningsgraden i fxui'en er litt lavere enn de andre modulene grunnet en metode som krevde at både restapi og testfx kjørte samtidig. Til tross for dette er det totale dekningsgraden på 75%.
+Dekningsgraden i fxui'en er litt lavere enn de andre modulene grunnet en metode som krevde at både restapi og testfx kjørte samtidig. Til tross for dette er det totale dekningsgraden på 75%, noe vi anser som høy dekningsgrad.
 ![Example](/docs/release3/testCoverage-core.png)
 ![Example](/docs/release3/testCoverage-restapi.png)
 ![Example](/docs/release3/testCoverage-FXUI.png)
