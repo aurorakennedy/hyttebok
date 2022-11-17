@@ -17,5 +17,4 @@ public class HytteSave {
         String path = System.getProperty("user.dir") + "//savestate//";
         mapper.writeValue(new File(path, fileName), list);
     }
-
 }
