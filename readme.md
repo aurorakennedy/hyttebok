@@ -63,3 +63,5 @@ Beskriver hva appen handler om og hva den er ment å gjøre når den er ferdig.
 #### 6. _hytte_ --> _doc_resources_
 
 Inneholder ressurser til _readme.md_ filen. Ekempelbilder og brukerhistorier.
+# repo-name
+# hyttebok
